@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { ExternalArrow, SectionHeader } from "./components";
-import { links, news, publications, research } from "./site-data";
+import {
+  links,
+  news,
+  publications,
+  research,
+  siteBasePath,
+} from "./site-data";
 
 export default function Home() {
   return (
@@ -34,7 +40,7 @@ export default function Home() {
         </div>
         <aside className="profile-aside">
           <img
-            src="/lei-ge.jpg"
+            src={`${siteBasePath}/lei-ge.jpg`}
             alt="Lei Ge at Imperial College London"
           />
           <dl>

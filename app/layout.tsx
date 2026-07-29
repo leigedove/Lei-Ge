@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter, SiteHeader } from "./components";
+import { siteBasePath } from "./site-data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,10 +14,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://lei-ge-research-fashion.polaron-0639.chatgpt.site";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://lei-ge-research-fashion.polaron-0639.chatgpt.site",
-  ),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Lei Ge — Scientific AI × Computational Fashion",
     template: "%s · Lei Ge",
@@ -33,9 +36,9 @@ export const metadata: Metadata = {
     "computational fashion",
   ],
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: `${siteBasePath}/favicon.png`,
+    shortcut: `${siteBasePath}/favicon.png`,
+    apple: `${siteBasePath}/favicon.png`,
   },
   openGraph: {
     type: "website",
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
       "Researching how intelligent systems understand science—and how computation can become tactile.",
     images: [
       {
-        url: "/og.png",
+        url: `${siteBasePath}/og.png`,
         width: 1200,
         height: 630,
         alt: "Lei Ge — Large language models for scientific discovery",
@@ -56,7 +59,7 @@ export const metadata: Metadata = {
     title: "Lei Ge — Scientific AI × Computational Fashion",
     description:
       "Researching how intelligent systems understand science—and how computation can become tactile.",
-    images: ["/og.png"],
+    images: [`${siteBasePath}/og.png`],
   },
 };
 

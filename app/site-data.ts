@@ -1,9 +1,11 @@
+export const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const links = {
   email: "mailto:g.lei23@imperial.ac.uk",
   scholar:
     "https://scholar.google.com/citations?hl=en&user=JgnH-O8AAAAJ",
   linkedin: "https://www.linkedin.com/in/ge-lei",
-  cv: "/Lei-Ge-CV.pdf",
+  cv: `${siteBasePath}/Lei-Ge-CV.pdf`,
 };
 
 export const news = [
@@ -121,7 +123,7 @@ export const research = [
     tags: ["LLM surrogates", "Bayesian optimization", "Reliability"],
     output: "P1",
     paperIds: ["P1"],
-    image: "/projects/llm-surrogate.png",
+    image: `${siteBasePath}/projects/llm-surrogate.png`,
     imageAlt:
       "A probabilistic response surface emerging from sparse observations and an optimization path",
     institution: "Imperial College London",
@@ -135,7 +137,7 @@ export const research = [
     tags: ["Battery science", "Agents", "Optimization"],
     output: "P2",
     paperIds: ["P2"],
-    image: "/projects/battery-agent.png",
+    image: `${siteBasePath}/projects/battery-agent.png`,
     imageAlt:
       "A battery cell, charging curve, and branching optimization protocols",
     institution: "Imperial College London",
@@ -149,7 +151,7 @@ export const research = [
     tags: ["Interpretability", "Representations", "Chemistry"],
     output: "P3 · T2 · T4 · T6 · T8",
     paperIds: ["P3"],
-    image: "/projects/llm-representations.png",
+    image: `${siteBasePath}/projects/llm-representations.png`,
     imageAlt:
       "Elemental nodes arranged as a three-dimensional spiral representation",
     institution: "Imperial College London",
@@ -163,7 +165,7 @@ export const research = [
     tags: ["MicroGPT", "Knowledge extraction", "Automation"],
     output: "P4 · T5 · T7",
     paperIds: ["P4"],
-    image: "/projects/scientific-automation.png",
+    image: `${siteBasePath}/projects/scientific-automation.png`,
     imageAlt:
       "Scientific documents transformed into structured data and a porous 3D microstructure",
     institution: "Imperial College London",
@@ -177,7 +179,7 @@ export const research = [
     tags: ["Computer vision", "3D pattern-making", "Garments"],
     output: "P5 · P7",
     paperIds: ["P5", "P7"],
-    image: "/projects/garment-mapping.png",
+    image: `${siteBasePath}/projects/garment-mapping.png`,
     imageAlt:
       "A draped fabric surface mapped with computer vision points into flat garment patterns",
     institution: "Donghua University",
@@ -191,7 +193,7 @@ export const research = [
     tags: ["Personalization", "Computational design", "Apparel"],
     output: "P6",
     paperIds: ["P6"],
-    image: "/projects/personalized-fashion.png",
+    image: `${siteBasePath}/projects/personalized-fashion.png`,
     imageAlt:
       "A digital body form connected to adaptable patterns and a finished garment",
     institution: "Donghua University",
@@ -205,7 +207,7 @@ export const research = [
     tags: ["Zero waste", "Sustainability", "Pattern-making"],
     output: "P8",
     paperIds: ["P8"],
-    image: "/projects/zero-waste-fashion.png",
+    image: `${siteBasePath}/projects/zero-waste-fashion.png`,
     imageAlt:
       "Interlocking zero-waste garment pattern pieces beside an assembled jacket",
     institution: "Donghua University",
