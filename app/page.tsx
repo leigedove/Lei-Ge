@@ -83,14 +83,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="compact-section shell">
-        <SectionHeader label="02" title="News" />
+      <section className="compact-section news-section shell">
+        <SectionHeader label="02 · news.log" title="News ⌨️" />
+        <div className="news-codebar" aria-hidden="true">
+          <code>const updates = await lei.latest();</code>
+          <span>⌨️</span>
+        </div>
         <div className="news-list">
           {news.slice(0, 5).map((item) => {
             const content = (
               <>
                 <time>{item.date}</time>
-                <span className="news-kind">{item.kind}</span>
+                <span className="news-kind">
+                  {"// "}{item.kind.toLowerCase()}
+                </span>
                 <span>{item.text}</span>
                 <span className="row-arrow" aria-hidden="true">
                   {item.href ? "↗" : "·"}
@@ -113,6 +119,10 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+        <div className="news-codefoot" aria-hidden="true">
+          <code>export default updates;</code>
+          <span>updated regularly</span>
         </div>
       </section>
 
