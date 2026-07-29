@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     "materials science",
     "interpretable AI",
     "computational fashion",
+    "diving",
+    "creative practice",
   ],
   icons: {
     icon: `${siteBasePath}/favicon.png`,
@@ -44,13 +46,13 @@ export const metadata: Metadata = {
     type: "website",
     title: "Lei Ge — Scientific AI × Computational Fashion",
     description:
-      "Researching how intelligent systems understand science—and how computation can become tactile.",
+      "Scientific AI, computational fashion, and a life spent making things by hand.",
     images: [
       {
-        url: `${siteBasePath}/og.png`,
+        url: `${siteBasePath}/og-life.png`,
         width: 1200,
         height: 630,
-        alt: "Lei Ge — Large language models for scientific discovery",
+        alt: "Lei Ge — Scientific AI, computational fashion, and life",
       },
     ],
   },
@@ -58,8 +60,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lei Ge — Scientific AI × Computational Fashion",
     description:
-      "Researching how intelligent systems understand science—and how computation can become tactile.",
-    images: [`${siteBasePath}/og.png`],
+      "Scientific AI, computational fashion, and a life spent making things by hand.",
+    images: [`${siteBasePath}/og-life.png`],
   },
 };
 

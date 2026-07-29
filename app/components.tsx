@@ -24,6 +24,7 @@ export function SiteHeader() {
         <Link href="/projects">Projects</Link>
         <Link href="/publications">Publications</Link>
         <Link href="/cv">CV</Link>
+        <Link href="/life">Life</Link>
       </nav>
       <a className="header-contact" href={links.email}>
         Email <ExternalArrow />

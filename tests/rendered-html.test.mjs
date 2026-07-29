@@ -62,6 +62,7 @@ test("server-renders all dedicated profile pages", async () => {
     ["/projects", /Scientific AI/],
     ["/publications", /Talks &amp; posters/],
     ["/cv", /Current appointments/],
+    ["/life", /Life, outside the lab\./],
   ];
 
   for (const [pathname, expected] of routes) {
@@ -83,6 +84,13 @@ test("server-renders all dedicated profile pages", async () => {
         html,
         /researchgate\.net\/publication\/378395439_Review_of_digital_pattern-making_technology_in_garment_production/,
       );
+    }
+    if (pathname === "/life") {
+      assert.match(html, /Dive Master/);
+      assert.match(html, /Baking/);
+      assert.match(html, /Making clothes/);
+      assert.match(html, /Paint, ink, and nowhere to rush to\./);
+      assert.match(html, /life\/calligraphy\.jpg/);
     }
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
   }
