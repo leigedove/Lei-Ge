@@ -148,6 +148,8 @@ img {
 
 .arrow {
   margin-left: 2px;
+  font-family: Arial, sans-serif;
+  font-variant-emoji: text;
 }
 
 .site-footer {
@@ -1337,25 +1339,25 @@ a.news-row:hover .news-text {
   }
 
   .profile-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    margin-top: 22px;
+    display: flex;
+    gap: 6px 16px;
+    margin-top: 20px;
   }
 
   .profile-links a {
-    display: flex;
-    min-height: 44px;
+    display: inline-flex;
+    min-height: 32px;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 12px;
-    border: 1px solid var(--line);
-    background: rgb(255 255 255 / 72%);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    white-space: nowrap;
   }
 
   .profile-links a:active {
-    border-color: var(--blue);
-    background: var(--blue-soft);
+    background: transparent;
+    text-decoration: underline;
   }
 
   .news-section::before {
@@ -1363,37 +1365,45 @@ a.news-row:hover .news-text {
   }
 
   .profile-aside {
-    display: grid;
-    grid-template-columns: 116px minmax(0, 1fr);
+    display: block;
     width: 100%;
   }
 
   .profile-aside img {
-    width: 116px;
-    height: 100%;
-    min-height: 168px;
-    aspect-ratio: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 0.92;
+    object-position: 50% 32%;
   }
 
   .profile-aside dl {
-    padding: 7px 12px;
-    border-top: 0;
-    border-left: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 16px;
+    padding: 10px 14px;
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 
   .profile-aside dl > div {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 7px;
-    padding: 6px 0;
-    font-size: 11px;
+    display: block;
+    min-width: 0;
+    padding: 9px 0;
+    font-size: 12px;
+  }
+
+  .profile-aside dl > div:nth-last-child(-n + 2) {
+    border-bottom: 0;
   }
 
   .profile-aside dt {
+    margin-bottom: 4px;
     font-size: 9px;
   }
 
   .profile-aside dd {
-    line-height: 1.35;
+    line-height: 1.4;
   }
 
   .compact-section {
@@ -1880,21 +1890,12 @@ a.news-row:hover .news-text {
     font-size: 11px;
   }
 
-  .profile-aside {
-    grid-template-columns: 102px minmax(0, 1fr);
-  }
-
-  .profile-aside img {
-    width: 102px;
-  }
-
   .profile-aside dl {
     padding-inline: 9px;
   }
 
   .profile-aside dl > div {
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 5px;
+    font-size: 11px;
   }
 
   .news-row {

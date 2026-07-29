@@ -4,7 +4,7 @@ import { links } from "./site-data";
 export function ExternalArrow() {
   return (
     <span className="arrow" aria-hidden="true">
-      ↗
+      ↗︎
     </span>
   );
 }
