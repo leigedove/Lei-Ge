@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteFooter, SiteHeader } from "./components";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,6 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    "https://lei-ge-research-fashion.polaron-0639.chatgpt.site",
+  ),
   title: {
     default: "Lei Ge — Scientific AI × Computational Fashion",
     template: "%s · Lei Ge",
@@ -38,12 +42,21 @@ export const metadata: Metadata = {
     title: "Lei Ge — Scientific AI × Computational Fashion",
     description:
       "Researching how intelligent systems understand science—and how computation can become tactile.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Lei Ge — Large language models for scientific discovery",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Lei Ge — Scientific AI × Computational Fashion",
     description:
       "Researching how intelligent systems understand science—and how computation can become tactile.",
+    images: ["/og.png"],
   },
 };
 
@@ -55,7 +68,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
