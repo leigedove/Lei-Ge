@@ -3,6 +3,15 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Frontend dependencies
+node_modules/
+.vinext/
+.wrangler/
+
+# Local artifacts
+.DS_Store
+tmp/
+
 # C extensions
 *.so
 

@@ -83,7 +83,7 @@ export function SectionHeader({
   link,
 }: {
   label: string;
-  title: string;
+  title: React.ReactNode;
   link?: { href: string; text: string };
 }) {
   return (

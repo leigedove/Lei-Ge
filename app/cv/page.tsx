@@ -146,7 +146,19 @@ export default function CvPage() {
                 <li key={paper.id}>
                   <span>{paper.id}</span>
                   <p>
-                    <strong>{paper.authors}.</strong> {paper.title}.{" "}
+                    <strong>{paper.authors}.</strong>{" "}
+                    {paper.href ? (
+                      <a
+                        href={paper.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {paper.title} <ExternalArrow />
+                      </a>
+                    ) : (
+                      paper.title
+                    )}
+                    .{" "}
                     <em>{paper.venue}</em>, {paper.year}.
                   </p>
                 </li>

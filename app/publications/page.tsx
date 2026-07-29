@@ -35,7 +35,7 @@ export default function PublicationsPage() {
         </div>
         <ol className="paper-list paper-list-full">
           {publications.map((paper) => (
-            <li key={paper.id}>
+            <li id={paper.id.toLowerCase()} key={paper.id}>
               <span className="paper-id">{paper.id}</span>
               <div>
                 <h2>{paper.title}</h2>

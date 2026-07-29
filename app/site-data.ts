@@ -10,34 +10,104 @@ export const news = [
   {
     date: "2026.05",
     kind: "Paper",
+    icon: "🧠",
     text: "Elicitation Matters: How Prompts and Query Protocols Shape LLM Surrogates under Sparse Observations.",
     href: "https://arxiv.org/abs/2605.04764",
   },
   {
     date: "2026.01",
     kind: "Paper",
+    icon: "🔋",
     text: "From Prompt to Protocol: Fast Charging Batteries with Large Language Models.",
     href: "https://arxiv.org/abs/2601.09626",
   },
   {
     date: "2026",
     kind: "Keynote",
+    icon: "🖥️",
     text: "From Trust to Action: Large Language Models for Scientific Discovery and Decision Support at AIMET.",
+  },
+  {
+    date: "2026",
+    kind: "Oral",
+    icon: "🤖",
+    text: "Presented From Prompt to Protocol: Fast Charging Batteries with Large Language Models at AI4AM in Madrid.",
+    href: "https://arxiv.org/abs/2601.09626",
   },
   {
     date: "2025.12",
     kind: "Publication",
+    icon: "🧬",
     text: "Do Llamas Understand the Periodic Table? published in Digital Discovery.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
+  },
+  {
+    date: "2025",
+    kind: "Community",
+    icon: "🕸️",
+    text: "Co-organized Deep Matters: Foundations, an interdisciplinary conference on foundation models for materials science.",
+    href: "https://tldr-group.github.io/deep-matters/",
+  },
+  {
+    date: "2025",
+    kind: "Lecture",
+    icon: "⌨️",
+    text: "Delivered “How LLMs Work? From Transformer to Reasoning” for the iCircular3 Marie Curie Doctoral Network.",
   },
   {
     date: "2025",
     kind: "Spotlight",
+    icon: "🔬",
     text: "Do Llamas See the Periodic Table in 3D? at the NeurIPS AI for Science Workshop.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
+  },
+  {
+    date: "2025",
+    kind: "Oral",
+    icon: "🧊",
+    text: "Presented Unveiling 3D Geometries in LLMs at AI4AM in San Sebastian.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
+  },
+  {
+    date: "2025",
+    kind: "Poster",
+    icon: "🧪",
+    text: "Presented LLMs Know Chemistry at the Oxford Modelling Symposium.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
+  },
+  {
+    date: "2025",
+    kind: "Poster",
+    icon: "🧮",
+    text: "Presented Do Llamas Understand Chemistry? at the AI for Materials Summer School in Karlsruhe.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
   },
   {
     date: "2025.06",
     kind: "Appointment",
+    icon: "💻",
     text: "Joined Polaron as a part-time LLM Machine Learning Engineer.",
+  },
+  {
+    date: "2024",
+    kind: "Publication",
+    icon: "📡",
+    text: "Materials Science in the Era of Large Language Models: A Perspective published in Digital Discovery.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00074a",
+  },
+  {
+    date: "2024",
+    kind: "Talk",
+    icon: "🧑‍💻",
+    text: "Presented Large Language Models in Materials Science at L2M3, EPFL.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00074a",
+  },
+  {
+    date: "2024",
+    kind: "Poster",
+    icon: "⚡",
+    text: "Presented Battery GPT? Materials Science in the Era of Large Language Models at the Oxford Modelling Symposium.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00074a",
   },
 ];
 
@@ -50,6 +120,10 @@ export const research = [
       "I study how language models behave as surrogate models in low-data optimization. The work shows that prompt design and query protocol are core components of surrogate specification, shaping uncertainty, belief updating, and downstream scientific decisions.",
     tags: ["LLM surrogates", "Bayesian optimization", "Reliability"],
     output: "P1",
+    paperIds: ["P1"],
+    image: "/projects/llm-surrogate.png",
+    imageAlt:
+      "A probabilistic response surface emerging from sparse observations and an optimization path",
     institution: "Imperial College London",
   },
   {
@@ -60,6 +134,10 @@ export const research = [
       "I develop LLM agents for battery fast-charging optimization. The agents expand protocol search beyond fixed human parameterizations, incorporate natural-language safety constraints, and operate in expensive, slow-feedback scientific settings.",
     tags: ["Battery science", "Agents", "Optimization"],
     output: "P2",
+    paperIds: ["P2"],
+    image: "/projects/battery-agent.png",
+    imageAlt:
+      "A battery cell, charging curve, and branching optimization protocols",
     institution: "Imperial College London",
   },
   {
@@ -70,6 +148,10 @@ export const research = [
       "I investigate how LLMs encode structured scientific knowledge. This work identifies a 3D spiral structure in hidden states that aligns with the conceptual organization of the periodic table.",
     tags: ["Interpretability", "Representations", "Chemistry"],
     output: "P3 · T2 · T4 · T6 · T8",
+    paperIds: ["P3"],
+    image: "/projects/llm-representations.png",
+    imageAlt:
+      "Elemental nodes arranged as a three-dimensional spiral representation",
     institution: "Imperial College London",
   },
   {
@@ -80,6 +162,10 @@ export const research = [
       "I build automated systems for extracting, structuring, and operationalizing scientific knowledge from literature and imaging workflows, including MicroGPT for 3D microstructure analysis.",
     tags: ["MicroGPT", "Knowledge extraction", "Automation"],
     output: "P4 · T5 · T7",
+    paperIds: ["P4"],
+    image: "/projects/scientific-automation.png",
+    imageAlt:
+      "Scientific documents transformed into structured data and a porous 3D microstructure",
     institution: "Imperial College London",
   },
   {
@@ -90,6 +176,10 @@ export const research = [
       "I developed computer-vision methods for mapping flexible garment surfaces and translating 3D shape information into structured representations for apparel development.",
     tags: ["Computer vision", "3D pattern-making", "Garments"],
     output: "P5 · P7",
+    paperIds: ["P5", "P7"],
+    image: "/projects/garment-mapping.png",
+    imageAlt:
+      "A draped fabric surface mapped with computer vision points into flat garment patterns",
     institution: "Donghua University",
   },
   {
@@ -100,6 +190,10 @@ export const research = [
       "I explored how individual body features and user-specific design needs can be translated into intelligent made-to-measure and apparel development workflows.",
     tags: ["Personalization", "Computational design", "Apparel"],
     output: "P6",
+    paperIds: ["P6"],
+    image: "/projects/personalized-fashion.png",
+    imageAlt:
+      "A digital body form connected to adaptable patterns and a finished garment",
     institution: "Donghua University",
   },
   {
@@ -110,6 +204,10 @@ export const research = [
       "I investigated computational approaches to garment pattern-making that reduce waste while preserving fit, function, manufacturability, and design intent.",
     tags: ["Zero waste", "Sustainability", "Pattern-making"],
     output: "P8",
+    paperIds: ["P8"],
+    image: "/projects/zero-waste-fashion.png",
+    imageAlt:
+      "Interlocking zero-waste garment pattern pieces beside an assembled jacket",
     institution: "Donghua University",
   },
 ];
@@ -141,6 +239,7 @@ export const publications = [
     title: "Do Llamas Understand the Periodic Table?",
     authors: "Lei Ge, Samuel J. Cooper",
     venue: "Digital Discovery, 4(12), 3455–3465",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
     type: "Journal article",
   },
   {
@@ -150,6 +249,7 @@ export const publications = [
       "Materials Science in the Era of Large Language Models: A Perspective",
     authors: "Lei Ge, Ronan Docherty, Samuel J. Cooper",
     venue: "Digital Discovery, 3(7), 1257–1272",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00074a",
     type: "Perspective",
   },
   {
@@ -159,6 +259,7 @@ export const publications = [
       "A Vision-Based Approach to Mapping Flexible Objects for Garment Development",
     authors: "Lei Ge, Xiaohui Li",
     venue: "Textile Research Journal, 93(15–16), 3381–3395",
+    href: "https://journals.sagepub.com/doi/10.1177/00405175221149212",
     type: "Journal article",
   },
   {
@@ -168,6 +269,7 @@ export const publications = [
       "A New Approach to 3D Pattern-Making for the Apparel Industry: Graphic Coding-Based Localization",
     authors: "Lei Ge, Xiaohui Li",
     venue: "Computers in Industry, 136, 103587",
+    href: "https://www.sciencedirect.com/science/article/pii/S0166361521001949",
     type: "Journal article",
   },
   {
@@ -176,6 +278,8 @@ export const publications = [
     title: "Review of Digital Pattern-Making Technology in Garment Production",
     authors: "Lei Ge, Xiaohui Li",
     venue: "Journal of Textile Research, 43(4), 203–209",
+    href:
+      "https://www.researchgate.net/publication/378395439_Review_of_digital_pattern-making_technology_in_garment_production",
     type: "Review",
   },
   {
@@ -184,6 +288,7 @@ export const publications = [
     title: "A Pattern-Making Approach to Improving Zero-Waste Fashion Design",
     authors: "Lei Ge, Xiaohui Li",
     venue: "Fashion Practice, 13(3), 443–463",
+    href: "https://www.tandfonline.com/doi/abs/10.1080/17569370.2021.1982503",
     type: "Journal article",
   },
 ];

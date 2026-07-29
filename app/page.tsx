@@ -58,9 +58,71 @@ export default function Home() {
         </aside>
       </section>
 
+      <section className="compact-section news-section shell">
+        <SectionHeader
+          label="01 · news.log"
+          title={
+            <>
+              News
+              <span className="news-title-emoji" aria-hidden="true">
+                ⌨️
+              </span>
+            </>
+          }
+        />
+        <div className="news-codebar" aria-hidden="true">
+          <code>const updates = await lei.latest();</code>
+          <span>{news.length} entries · scroll ↓</span>
+        </div>
+        <div
+          className="news-scroll"
+          tabIndex={0}
+          aria-label={`News archive, ${news.length} updates`}
+        >
+          <div className="news-list">
+            {news.map((item) => {
+              const content = (
+                <>
+                  <time>{item.date}</time>
+                  <span className="news-emoji" aria-hidden="true">
+                    {item.icon}
+                  </span>
+                  <span className="news-kind">
+                    {"// "}{item.kind.toLowerCase()}
+                  </span>
+                  <span className="news-text">{item.text}</span>
+                  <span className="row-arrow" aria-hidden="true">
+                    {item.href ? "↗" : "·"}
+                  </span>
+                </>
+              );
+              return item.href ? (
+                <a
+                  className="news-row"
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={item.text}
+                >
+                  {content}
+                </a>
+              ) : (
+                <div className="news-row" key={item.text}>
+                  {content}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="news-codefoot" aria-hidden="true">
+          <code>export default updates;</code>
+          <span>updated regularly</span>
+        </div>
+      </section>
+
       <section className="compact-section shell">
         <SectionHeader
-          label="01"
+          label="02"
           title="Research highlights"
           link={{ href: "/projects", text: "All projects" }}
         />
@@ -72,6 +134,15 @@ export default function Home() {
               key={project.number}
             >
               <span className="row-index">{project.number}</span>
+              <figure className="highlight-visual">
+                <img
+                  src={project.image}
+                  alt=""
+                  width="1536"
+                  height="1024"
+                  loading={project.number === "01" ? "eager" : "lazy"}
+                />
+              </figure>
               <div>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
@@ -83,49 +154,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="compact-section news-section shell">
-        <SectionHeader label="02 · news.log" title="News ⌨️" />
-        <div className="news-codebar" aria-hidden="true">
-          <code>const updates = await lei.latest();</code>
-          <span>⌨️</span>
-        </div>
-        <div className="news-list">
-          {news.slice(0, 5).map((item) => {
-            const content = (
-              <>
-                <time>{item.date}</time>
-                <span className="news-kind">
-                  {"// "}{item.kind.toLowerCase()}
-                </span>
-                <span>{item.text}</span>
-                <span className="row-arrow" aria-hidden="true">
-                  {item.href ? "↗" : "·"}
-                </span>
-              </>
-            );
-            return item.href ? (
-              <a
-                className="news-row"
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                key={item.text}
-              >
-                {content}
-              </a>
-            ) : (
-              <div className="news-row" key={item.text}>
-                {content}
-              </div>
-            );
-          })}
-        </div>
-        <div className="news-codefoot" aria-hidden="true">
-          <code>export default updates;</code>
-          <span>updated regularly</span>
-        </div>
-      </section>
-
       <section className="compact-section shell">
         <SectionHeader
           label="03"
@@ -133,7 +161,7 @@ export default function Home() {
           link={{ href: "/publications", text: "All publications" }}
         />
         <ol className="paper-list">
-          {publications.slice(0, 3).map((paper) => (
+          {publications.slice(0, 4).map((paper) => (
             <li key={paper.id}>
               <span className="paper-id">{paper.id}</span>
               <div>
