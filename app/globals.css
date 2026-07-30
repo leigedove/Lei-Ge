@@ -1533,10 +1533,10 @@ a.news-row:hover .news-text {
   }
 
   .site-header {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 8px;
-    min-height: 58px;
-    padding: 6px max(14px, env(safe-area-inset-right)) 6px
+    grid-template-columns: 1fr;
+    gap: 2px;
+    min-height: 86px;
+    padding: 8px max(14px, env(safe-area-inset-right)) 4px
       max(14px, env(safe-area-inset-left));
   }
 
@@ -1556,17 +1556,19 @@ a.news-row:hover .news-text {
   }
 
   .site-header nav {
+    width: 100%;
     min-width: 0;
     gap: 1px;
-    justify-content: flex-end;
+    justify-content: space-between;
     border: 0;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .site-header nav a {
     display: grid;
-    min-height: 44px;
-    padding: 0 7px;
+    min-height: 34px;
+    flex: 1;
+    padding: 0 5px;
     border-radius: 4px;
     place-items: center;
     white-space: nowrap;
@@ -2177,8 +2179,12 @@ a.news-row:hover .news-text {
   }
 
   .life-intro h1 {
-    max-width: 330px;
-    font-size: 46px;
+    max-width: 310px;
+    font-size: 42px;
+  }
+
+  .life-intro > p br {
+    display: none;
   }
 
   .life-intro > p {
@@ -2202,43 +2208,27 @@ a.news-row:hover .news-text {
   }
 
   .life-spread {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px 10px;
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .life-shot-open {
-    grid-column: 1 / -1;
-    grid-row: auto;
-  }
-
-  .life-shot-team {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .life-shot-barracuda {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    margin-top: 0;
-  }
-
+  .life-shot-open,
+  .life-shot-team,
+  .life-shot-barracuda,
   .life-shot-turtle {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: auto;
     margin-top: 0;
   }
 
   .life-shot-open img {
-    aspect-ratio: 1.28 / 1;
+    aspect-ratio: 4 / 3;
   }
 
   .life-shot-team img,
+  .life-shot-barracuda img,
   .life-shot-turtle img {
-    aspect-ratio: 1 / 1;
-  }
-
-  .life-shot-barracuda img {
-    aspect-ratio: 1.75 / 1;
+    aspect-ratio: 16 / 9;
   }
 
   .life-art-section {
@@ -2261,22 +2251,24 @@ a.news-row:hover .news-text {
   }
 
   .life-art-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 42px 10px;
+    grid-template-columns: 1fr;
+    gap: 44px;
   }
 
   .life-art-form {
-    grid-column: 1 / -1;
-    width: calc(78% - 5px);
+    grid-column: 1;
+    width: 82%;
   }
 
   .life-art-cake {
-    grid-column: 2;
-    margin-top: -10px;
+    grid-column: 1;
+    width: 68%;
+    margin-top: 0;
+    justify-self: end;
   }
 
   .life-art-calligraphy {
-    grid-column: 1 / -1;
+    grid-column: 1;
     margin-top: 0;
   }
 
