@@ -62,7 +62,7 @@ test("server-renders all dedicated profile pages", async () => {
     ["/projects", /Scientific AI/],
     ["/publications", /Talks &amp; posters/],
     ["/cv", /Current appointments/],
-    ["/life", /Life, outside the lab\./],
+    ["/life", /I&#x27;m a Dive Master\./],
   ];
 
   for (const [pathname, expected] of routes) {
@@ -86,11 +86,18 @@ test("server-renders all dedicated profile pages", async () => {
       );
     }
     if (pathname === "/life") {
-      assert.match(html, /Dive Master/);
-      assert.match(html, /Baking/);
-      assert.match(html, /Making clothes/);
-      assert.match(html, /Paint, ink, and nowhere to rush to\./);
+      assert.match(html, /Open water/);
+      assert.match(html, /Dive days/);
+      assert.match(html, /Barracuda/);
+      assert.match(html, /Sea turtle/);
+      assert.match(html, /life\/barracuda-cropped\.jpg/);
+      assert.match(html, /life\/sea-turtle-cropped\.jpg/);
+      assert.match(html, /Creative practice/);
+      assert.match(html, /life\/garment-main\.png/);
+      assert.match(html, /life\/buttercream-cake\.jpg/);
+      assert.doesNotMatch(html, /form-study|material-detail|dressmaking\.jpg/);
       assert.match(html, /life\/calligraphy\.jpg/);
+      assert.doesNotMatch(html, /line-study\.jpg|painting\.jpg/);
     }
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
   }
