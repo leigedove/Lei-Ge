@@ -14,33 +14,34 @@ export const links = {
 
 export const news = [
   {
-    date: "May 2026",
+    date: "29 Sep 2026",
+    text: "I was invited to give a keynote at AIMET in Mechelen, Belgium.",
+    href: "https://aimet.be/preliminary-programme/",
+  },
+  {
+    date: "6 May 2026",
     text: "We released a new paper on how prompts and query protocols shape LLM surrogates when data are scarce.",
     href: "https://arxiv.org/abs/2605.04764",
   },
   {
-    date: "2026",
-    text: "I was invited to give a keynote at AIMET in Mechelen, Belgium.",
-  },
-  {
-    date: "Jan 2026",
+    date: "14 Jan 2026",
     text: "We released a paper on using LLM agents to design fast-charging battery protocols.",
     href: "https://arxiv.org/abs/2601.09626",
   },
   {
-    date: "Dec 2025",
-    text: "Our paper on how LLMs represent the periodic table was published in Digital Discovery.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
-  },
-  {
-    date: "2025",
+    date: "7 Dec 2025",
     text: "I gave a spotlight presentation at the NeurIPS AI for Science Workshop in San Diego.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
+    href: "https://ai4sciencecommunity.github.io/neurips25.html",
   },
   {
-    date: "2025",
+    date: "6 Nov 2025",
     text: "I co-organized Deep Matters: Foundations in London, a conference on foundation models for materials science.",
     href: "https://tldr-group.github.io/deep-matters/",
+  },
+  {
+    date: "14 Oct 2025",
+    text: "Our paper on how LLMs represent the periodic table was published in Digital Discovery.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
   },
   {
     date: "Jun 2025",

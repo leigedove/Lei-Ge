@@ -44,6 +44,12 @@ test("server-renders the compact homepage", async () => {
   assert.match(html, /7 recent updates/);
   assert.match(html, /invited to give a keynote at AIMET in Mechelen/);
   assert.match(html, /spotlight presentation at the NeurIPS AI for Science Workshop/);
+  assert.match(html, /29 Sep 2026/);
+  assert.match(html, /6 May 2026/);
+  assert.match(html, /14 Jan 2026/);
+  assert.match(html, /7 Dec 2025/);
+  assert.match(html, /6 Nov 2025/);
+  assert.match(html, /14 Oct 2025/);
   assert.doesNotMatch(html, /\/\/ keynote|\/\/ oral|\/\/ poster/);
   assert.match(html, /projects\/llm-surrogate\.png/);
   assert.equal(
@@ -52,7 +58,7 @@ test("server-renders the compact homepage", async () => {
     "Homepage should show four selected publications",
   );
   assert.ok(
-    html.indexOf("News ⌨️") < html.indexOf("Research highlights"),
+    html.indexOf("29 Sep 2026") < html.indexOf("Research highlights"),
     "News should appear before research highlights",
   );
   assert.ok(
