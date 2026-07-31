@@ -15,7 +15,7 @@ export function SiteHeader() {
       <Link className="wordmark" href="/" aria-label="Lei Ge, home">
         <span className="wordmark-mark">LG</span>
         <span>
-          Lei Ge
+          Lei Ge (雷鸽)
           <small>Scientific AI · Computational Fashion</small>
         </span>
       </Link>
@@ -37,7 +37,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer shell">
       <div>
-        <span>© 2026 Lei Ge</span>
+        <span>© 2026 Lei Ge (雷鸽)</span>
         <span>London, UK</span>
       </div>
       <div className="footer-links">
@@ -63,7 +63,7 @@ export function PageIntro({
 }: {
   eyebrow: string;
   title: string;
-  description: string;
+  description: React.ReactNode;
   action?: React.ReactNode;
 }) {
   return (

@@ -46,6 +46,7 @@ function TimelineEntries({
   entries: {
     date: string;
     place: string;
+    href?: string;
     role: string;
     details: string[];
   }[];
@@ -56,7 +57,18 @@ function TimelineEntries({
         <article key={entry.date + entry.place}>
           <time>{entry.date}</time>
           <div>
-            <span>{entry.place}</span>
+            {entry.href ? (
+              <a
+                className="cv-place-link"
+                href={entry.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {entry.place} <ExternalArrow />
+              </a>
+            ) : (
+              <span>{entry.place}</span>
+            )}
             <h3>{entry.role}</h3>
             <ul>
               {entry.details.map((detail) => (
@@ -75,8 +87,20 @@ export default function CvPage() {
     <main className="inner-page shell" id="main">
       <PageIntro
         eyebrow="Curriculum vitae"
-        title="Lei Ge"
-        description="PhD Candidate in Design Engineering at Imperial College London · LLM Machine Learning Engineer at Polaron · London, UK"
+        title="Lei Ge (雷鸽)"
+        description={
+          <>
+            PhD Candidate in Design Engineering at{" "}
+            <a href={links.imperial} target="_blank" rel="noreferrer">
+              Imperial College London
+            </a>{" "}
+            · LLM Machine Learning Engineer at{" "}
+            <a href={links.polaron} target="_blank" rel="noreferrer">
+              Polaron
+            </a>{" "}
+            · London, UK
+          </>
+        }
         action={
           <a className="download-link" href={links.cv}>
             Download PDF CV ↓
@@ -104,7 +128,6 @@ export default function CvPage() {
             <a href="#presentations">Presentations</a>
             <a href="#service">Service</a>
             <a href="#industry">Industry</a>
-            <a href="#reviewing">Reviewing</a>
           </nav>
           <div>
             <span>Research interests</span>
@@ -133,7 +156,6 @@ export default function CvPage() {
                     <span>{project.institution}</span>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
-                    <small>Associated outputs: {project.output}</small>
                   </div>
                 </article>
               ))}
@@ -167,14 +189,22 @@ export default function CvPage() {
           </CvSection>
 
           <CvSection id="presentations" number="05" title="Presentations">
-            <ol className="cv-output-list">
+            <ol className="cv-presentation-list">
               {talks.map((talk) => (
                 <li key={talk.id}>
                   <span>{talk.id}</span>
-                  <p>
-                    <strong>Lei Ge.</strong> {talk.title}. {talk.event},{" "}
-                    {talk.year}. <em>({talk.type})</em>
-                  </p>
+                  <div>
+                    <div className="cv-presentation-meta">
+                      <span
+                        className={`talk-type talk-type--${talk.type.toLowerCase()}`}
+                      >
+                        {talk.type}
+                      </span>
+                      <time>{talk.year}</time>
+                    </div>
+                    <h3>{talk.title}</h3>
+                    <p>{talk.event}</p>
+                  </div>
                 </li>
               ))}
             </ol>
@@ -202,18 +232,20 @@ export default function CvPage() {
                 </article>
               ))}
             </div>
+            <div className="cv-reviewer-block">
+              <div>
+                <span>Peer review</span>
+                <h3>Journal reviewer</h3>
+              </div>
+              <p>
+                Reviewer for {reviewVenues.slice(0, -1).join(", ")}, and{" "}
+                {reviewVenues.at(-1)}.
+              </p>
+            </div>
           </CvSection>
 
           <CvSection id="industry" number="07" title="Industry experience">
             <TimelineEntries entries={industry} />
-          </CvSection>
-
-          <CvSection id="reviewing" number="08" title="Reviewing">
-            <div className="review-list">
-              {reviewVenues.map((venue) => (
-                <span key={venue}>{venue}</span>
-              ))}
-            </div>
           </CvSection>
         </div>
       </div>

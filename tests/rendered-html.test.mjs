@@ -29,18 +29,22 @@ test("server-renders the compact homepage", async () => {
   const response = await render("/");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /<title>Lei Ge — Scientific AI × Computational Fashion/);
+  assert.match(
+    html,
+    /<title>Lei Ge \(雷鸽\) — Scientific AI × Computational Fashion/,
+  );
+  assert.match(html, /Lei Ge \(雷鸽\)/);
   assert.match(html, /PhD Candidate in Design Engineering/);
+  assert.match(html, /LLM interpretability/);
+  assert.match(html, /agentic systems/);
   assert.match(html, /Research highlights/);
   assert.match(html, /Selected publications/);
   assert.match(html, /Computational fashion/);
   assert.match(html, /Deep Matters: Foundations/);
-  assert.match(html, /iCircular3 Marie Curie Doctoral Network/);
-  assert.match(html, /News archive, 15 updates/);
-  assert.match(html, /Large Language Models in Materials Science at L2M3/);
-  assert.match(html, /AI4AM in Madrid/);
-  assert.match(html, /AI for Materials Summer School in Karlsruhe/);
-  assert.match(html, /Battery GPT\?/);
+  assert.match(html, /7 recent updates/);
+  assert.match(html, /invited to give a keynote at AIMET in Mechelen/);
+  assert.match(html, /spotlight presentation at the NeurIPS AI for Science Workshop/);
+  assert.doesNotMatch(html, /\/\/ keynote|\/\/ oral|\/\/ poster/);
   assert.match(html, /projects\/llm-surrogate\.png/);
   assert.equal(
     (html.match(/class="paper-id"/g) || []).length,
@@ -80,6 +84,10 @@ test("server-renders all dedicated profile pages", async () => {
     }
     if (pathname === "/cv") {
       assert.match(html, /Lee Family Scholarship/);
+      assert.match(html, /Istituto Marangoni · Milan, Italy/);
+      assert.match(html, /Journal reviewer/);
+      assert.match(html, /Reviewer for.*Communications Materials/);
+      assert.doesNotMatch(html, /Associated outputs/);
       assert.match(
         html,
         /researchgate\.net\/publication\/378395439_Review_of_digital_pattern-making_technology_in_garment_production/,

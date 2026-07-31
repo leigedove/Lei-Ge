@@ -21,14 +21,15 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Lei Ge — Scientific AI × Computational Fashion",
-    template: "%s · Lei Ge",
+    default: "Lei Ge (雷鸽) — Scientific AI × Computational Fashion",
+    template: "%s · Lei Ge (雷鸽)",
   },
   description:
-    "Lei Ge is a PhD candidate at Imperial College London working on large language models for science, interpretable AI, agentic systems, and computational fashion.",
-  authors: [{ name: "Lei Ge" }],
+    "Lei Ge (雷鸽) is a PhD candidate at Imperial College London working on large language model interpretability, agentic systems, and computational fashion.",
+  authors: [{ name: "Lei Ge (雷鸽)" }],
   keywords: [
     "Lei Ge",
+    "雷鸽",
     "large language models",
     "AI for science",
     "materials science",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Lei Ge — Scientific AI × Computational Fashion",
+    title: "Lei Ge (雷鸽) — Scientific AI × Computational Fashion",
     description:
       "Scientific AI, computational fashion, and a life spent making things by hand.",
     images: [
@@ -52,13 +53,13 @@ export const metadata: Metadata = {
         url: `${siteBasePath}/og-life.png`,
         width: 1200,
         height: 630,
-        alt: "Lei Ge — Scientific AI, computational fashion, and life",
+        alt: "Lei Ge (雷鸽) — Scientific AI, computational fashion, and life",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lei Ge — Scientific AI × Computational Fashion",
+    title: "Lei Ge (雷鸽) — Scientific AI × Computational Fashion",
     description:
       "Scientific AI, computational fashion, and a life spent making things by hand.",
     images: [`${siteBasePath}/og-life.png`],

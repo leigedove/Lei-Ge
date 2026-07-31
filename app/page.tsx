@@ -14,18 +14,27 @@ export default function Home() {
       <section className="profile-hero shell">
         <div className="profile-copy">
           <p className="eyebrow-label">Hello, I&apos;m</p>
-          <h1>Lei Ge</h1>
+          <h1>Lei Ge (雷鸽)</h1>
           <p className="profile-role">
             PhD Candidate in Design Engineering
             <br />
             Imperial College London
           </p>
           <p className="profile-summary">
-            I research large language models for scientific discovery,
-            focusing on materials science, interpretability, sparse-data
-            optimization, and agentic systems. My earlier work in fashion
-            design and engineering continues to shape how I think about
-            computation, geometry, and the physical world.
+            I am a PhD candidate at{" "}
+            <a href={links.imperial} target="_blank" rel="noreferrer">
+              Imperial College London
+            </a>
+            , expecting to graduate in 2026, and a part-time LLM Machine
+            Learning Engineer at{" "}
+            <a href={links.polaron} target="_blank" rel="noreferrer">
+              Polaron
+            </a>
+            . My research focuses on <strong>LLM interpretability</strong> and{" "}
+            <strong>agentic systems</strong>. Before my PhD, I studied fashion
+            design and engineering and researched AI for garment structure
+            design. That engineering background continues to shape how I think
+            about computation, geometry, and the physical world.
           </p>
           <div className="profile-links">
             <a href={links.email}>Email <ExternalArrow /></a>
@@ -46,11 +55,19 @@ export default function Home() {
           <dl>
             <div>
               <dt>Current</dt>
-              <dd>PhD Candidate, Imperial</dd>
+              <dd>
+                <a href={links.imperial} target="_blank" rel="noreferrer">
+                  PhD Candidate, Imperial
+                </a>
+              </dd>
             </div>
             <div>
               <dt>Also</dt>
-              <dd>LLM ML Engineer, Polaron</dd>
+              <dd>
+                <a href={links.polaron} target="_blank" rel="noreferrer">
+                  LLM ML Engineer, Polaron
+                </a>
+              </dd>
             </div>
             <div>
               <dt>Research</dt>
@@ -66,63 +83,36 @@ export default function Home() {
 
       <section className="compact-section news-section shell">
         <SectionHeader
-          label="01 · news.log"
-          title={
-            <>
-              News
-              <span className="news-title-emoji" aria-hidden="true">
-                ⌨️
-              </span>
-            </>
-          }
+          label="01"
+          title="News"
         />
-        <div className="news-codebar" aria-hidden="true">
-          <code>const updates = await lei.latest();</code>
-          <span>{news.length} entries · scroll ↓</span>
-        </div>
-        <div
-          className="news-scroll"
-          tabIndex={0}
-          aria-label={`News archive, ${news.length} updates`}
-        >
-          <div className="news-list">
-            {news.map((item) => {
-              const content = (
-                <>
-                  <time>{item.date}</time>
-                  <span className="news-emoji" aria-hidden="true">
-                    {item.icon}
-                  </span>
-                  <span className="news-kind">
-                    {"// "}{item.kind.toLowerCase()}
-                  </span>
-                  <span className="news-text">{item.text}</span>
-                  <span className="row-arrow" aria-hidden="true">
-                    {item.href ? "↗" : "·"}
-                  </span>
-                </>
-              );
-              return item.href ? (
-                <a
-                  className="news-row"
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={item.text}
-                >
-                  {content}
-                </a>
-              ) : (
-                <div className="news-row" key={item.text}>
-                  {content}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="news-codefoot" aria-hidden="true">
-          <code>export default updates;</code>
-          <span>updated regularly</span>
+        <div className="news-list" aria-label={`${news.length} recent updates`}>
+          {news.map((item) => {
+            const content = (
+              <>
+                <time>{item.date}</time>
+                <span className="news-text">{item.text}</span>
+                <span className="row-arrow" aria-hidden="true">
+                  {item.href ? "↗" : "·"}
+                </span>
+              </>
+            );
+            return item.href ? (
+              <a
+                className="news-row"
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                key={item.text}
+              >
+                {content}
+              </a>
+            ) : (
+              <div className="news-row" key={item.text}>
+                {content}
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -171,21 +161,15 @@ export default function Home() {
             <li key={paper.id}>
               <span className="paper-id">{paper.id}</span>
               <div>
-                <h3>{paper.title}</h3>
+                <h3>
+                  <a href={paper.href} target="_blank" rel="noreferrer">
+                    {paper.title}
+                  </a>
+                </h3>
                 <p>{paper.authors}</p>
                 <em>{paper.venue}</em>
               </div>
               <time>{paper.year}</time>
-              {paper.href ? (
-                <a
-                  href={paper.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Open ${paper.title}`}
-                >
-                  ↗
-                </a>
-              ) : null}
             </li>
           ))}
         </ol>
@@ -196,15 +180,17 @@ export default function Home() {
           <span className="eyebrow-label">A parallel research thread</span>
           <h2>Computational fashion</h2>
         </div>
-        <p>
-          Before my PhD, I worked across digital pattern-making, computer
-          vision, personalized apparel, and zero-waste design. That training
-          gives my AI research a distinct perspective: systems should be
-          interpretable, materially grounded, and attentive to constraints.
-        </p>
-        <Link href="/projects#fashion">
-          View fashion projects <span aria-hidden="true">→</span>
-        </Link>
+        <div className="fashion-note-copy">
+          <p>
+            Before my PhD, I worked across digital pattern-making, computer
+            vision, personalized apparel, and zero-waste design. That training
+            gives my AI research a distinct perspective: systems should be
+            interpretable, materially grounded, and attentive to constraints.
+          </p>
+          <Link href="/projects#fashion">
+            View fashion projects <span aria-hidden="true">→</span>
+          </Link>
+        </div>
       </section>
 
       <section className="home-contact shell">

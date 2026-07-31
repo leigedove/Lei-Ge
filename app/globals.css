@@ -237,6 +237,24 @@ img {
   line-height: 1.75;
 }
 
+.profile-summary a,
+.page-intro > div > p a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-color: rgb(30 90 135 / 30%);
+  text-underline-offset: 3px;
+}
+
+.profile-summary a:hover,
+.page-intro > div > p a:hover {
+  text-decoration-color: currentColor;
+}
+
+.profile-summary strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
 .profile-links {
   display: flex;
   flex-wrap: wrap;
@@ -288,6 +306,10 @@ img {
   margin: 0;
 }
 
+.profile-aside dd a:hover {
+  color: var(--blue);
+}
+
 .compact-section {
   padding-block: 52px;
   border-top: 1px solid var(--line);
@@ -337,18 +359,7 @@ img {
 }
 
 .news-section .section-header h2 {
-  display: flex;
-  gap: 8px;
-  align-items: center;
   line-height: 1;
-}
-
-.news-title-emoji {
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 0.56em;
-  line-height: 1;
-  transform: translateY(1px);
 }
 
 .news-section::before {
@@ -453,88 +464,13 @@ img {
 
 .news-row {
   display: grid;
-  grid-template-columns: 72px 24px 112px minmax(0, 1fr) 16px;
+  grid-template-columns: 92px minmax(0, 1fr) 16px;
   gap: 16px;
-  align-items: start;
-  padding: 14px 12px;
+  align-items: baseline;
+  padding: 15px 0;
   border-bottom: 1px solid var(--line);
   font-size: 15px;
-  line-height: 1.45;
-}
-
-.news-codebar,
-.news-codefoot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #557084;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 11px;
-}
-
-.news-codebar {
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-bottom: 0;
-  background-color: #f8fafb;
-  background-image:
-    linear-gradient(rgba(30, 90, 135, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 90, 135, 0.045) 1px, transparent 1px);
-  background-size: 18px 18px;
-}
-
-.news-codebar span {
-  color: var(--blue);
-  font-size: 11px;
-}
-
-.news-scroll {
-  max-height: min(500px, 62vh);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  border: 1px solid var(--line);
-  background: #fff;
-  scrollbar-color: #9bb0bf #f2f5f7;
-  scrollbar-width: thin;
-}
-
-.news-scroll:focus-visible {
-  outline: 2px solid var(--blue);
-  outline-offset: 3px;
-}
-
-.news-scroll .news-list {
-  border-top: 0;
-}
-
-.news-scroll .news-row:last-child {
-  border-bottom: 0;
-}
-
-.news-codefoot {
-  padding-top: 9px;
-}
-
-.news-codefoot span {
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.news-kind {
-  color: var(--blue);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 11px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.news-emoji {
-  justify-self: center;
-  filter: saturate(0.75);
-  font-family: sans-serif;
-  font-size: 13px;
-  text-transform: none;
+  line-height: 1.55;
 }
 
 a.news-row:hover .news-text {
@@ -549,7 +485,7 @@ a.news-row:hover .news-text {
 
 .paper-list li {
   display: grid;
-  grid-template-columns: 46px minmax(0, 1fr) 54px 16px;
+  grid-template-columns: 46px minmax(0, 1fr) 54px;
   gap: 16px;
   padding: 17px 0;
   border-bottom: 1px solid var(--line);
@@ -568,6 +504,20 @@ a.news-row:hover .news-text {
   line-height: 1.32;
 }
 
+.paper-list h3 a,
+.paper-list h2 a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-color: rgb(30 90 135 / 24%);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.paper-list h3 a:hover,
+.paper-list h2 a:hover {
+  text-decoration-color: currentColor;
+}
+
 .paper-list p {
   margin: 0 0 5px;
   color: var(--muted);
@@ -580,17 +530,18 @@ a.news-row:hover .news-text {
   font-size: 13px;
 }
 
-.paper-list li > a,
-.paper-list li > span:last-child {
+.paper-list time {
   justify-self: end;
-  color: var(--blue);
+  padding-top: 3px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
 }
 
 .fashion-note {
   position: relative;
   display: grid;
-  grid-template-columns: 0.32fr 1fr auto;
-  gap: 42px;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 44px;
   align-items: start;
   margin-block: 16px 64px;
   padding: 28px;
@@ -631,6 +582,10 @@ a.news-row:hover .news-text {
   font-weight: 400;
 }
 
+.fashion-note .eyebrow-label {
+  white-space: nowrap;
+}
+
 .fashion-note p {
   margin: 0;
   color: #4f5e6b;
@@ -638,7 +593,17 @@ a.news-row:hover .news-text {
   line-height: 1.65;
 }
 
-.fashion-note > a {
+.fashion-note-copy {
+  max-width: 690px;
+}
+
+.fashion-note-copy > a {
+  display: inline-flex;
+  gap: 18px;
+  align-items: center;
+  margin-top: 16px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgb(30 90 135 / 35%);
   color: var(--blue);
   font-size: 12px;
   white-space: nowrap;
@@ -864,8 +829,7 @@ a.news-row:hover .news-text {
 
 .tag-row span,
 .paper-type,
-.talk-type,
-.review-list span {
+.talk-type {
   padding: 3px 6px;
   border: 1px solid var(--line);
   color: var(--muted);
@@ -944,7 +908,11 @@ a.news-row:hover .news-text {
 }
 
 .talks-section {
-  padding-top: 54px;
+  margin-top: 56px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--blue);
+  background: var(--faint);
 }
 
 .talks-section > header {
@@ -962,10 +930,17 @@ a.news-row:hover .news-text {
   font-weight: 400;
 }
 
+.talks-section > header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .talk-list article {
   display: grid;
-  grid-template-columns: 46px 1fr 72px 54px;
+  grid-template-columns: 46px 82px minmax(0, 1fr) 54px;
   gap: 16px;
+  align-items: start;
   padding: 15px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -992,6 +967,31 @@ a.news-row:hover .news-text {
 
 .talk-list time {
   justify-self: end;
+  padding-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.talk-type {
+  width: fit-content;
+  border-color: #b9c7d1;
+  background: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.talk-type--keynote,
+.talk-type--spotlight {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+}
+
+.talk-type--oral {
+  border-color: #b7cad8;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-weight: 600;
 }
 
 /* CV */
@@ -1044,7 +1044,10 @@ a.news-row:hover .news-text {
 }
 
 .cv-section {
-  padding-bottom: 42px;
+  margin-bottom: 38px;
+  border: 1px solid var(--line);
+  border-top: 0;
+  background: #fff;
   scroll-margin-top: 88px;
 }
 
@@ -1053,12 +1056,14 @@ a.news-row:hover .news-text {
   grid-template-columns: var(--cv-meta-column) minmax(0, 1fr);
   gap: var(--cv-column-gap);
   align-items: start;
-  padding-bottom: 13px;
-  border-bottom: 1px solid var(--line-dark);
+  padding: 13px 18px;
+  border-top: 3px solid var(--blue);
+  border-bottom: 1px solid #c8d3dc;
+  background: var(--blue-soft);
 }
 
 .cv-section > header span {
-  padding-top: 7px;
+  padding-top: 6px;
   color: var(--blue);
   font-family: var(--font-geist-mono), monospace;
   font-size: 10px;
@@ -1078,7 +1083,7 @@ a.news-row:hover .news-text {
   grid-template-columns: var(--cv-meta-column) minmax(0, 1fr);
   gap: var(--cv-column-gap);
   align-items: start;
-  padding: 18px 0;
+  padding: 18px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1094,9 +1099,15 @@ a.news-row:hover .news-text {
 
 .cv-timeline article > div > span,
 .cv-research-list article > div > span,
-.cv-service-list article > div > span {
+.cv-service-list article > div > span,
+.cv-place-link {
   color: var(--blue);
   font-size: 11px;
+}
+
+.cv-place-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .cv-timeline h3,
@@ -1124,14 +1135,6 @@ a.news-row:hover .news-text {
   line-height: 1.6;
 }
 
-.cv-research-list small {
-  display: block;
-  margin-top: 7px;
-  color: var(--blue);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
-}
-
 .cv-service-list a {
   display: inline-block;
   margin-top: 8px;
@@ -1150,7 +1153,7 @@ a.news-row:hover .news-text {
   grid-template-columns: var(--cv-meta-column) minmax(0, 1fr);
   gap: var(--cv-column-gap);
   align-items: start;
-  padding: 13px 0;
+  padding: 14px 18px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1183,12 +1186,86 @@ a.news-row:hover .news-text {
   text-underline-offset: 3px;
 }
 
-.review-list {
+.cv-presentation-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-presentation-list > li {
+  display: grid;
+  grid-template-columns: var(--cv-meta-column) minmax(0, 1fr);
+  gap: var(--cv-column-gap);
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cv-presentation-list > li > span {
+  padding-top: 4px;
+  color: var(--blue);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+}
+
+.cv-presentation-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-left: calc(var(--cv-meta-column) + var(--cv-column-gap));
-  padding-top: 16px;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cv-presentation-meta time {
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-presentation-list h3 {
+  margin: 0 0 5px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.cv-presentation-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.cv-reviewer-block {
+  display: grid;
+  grid-template-columns: var(--cv-meta-column) minmax(0, 1fr);
+  gap: var(--cv-column-gap);
+  align-items: start;
+  padding: 18px;
+  background: #f8fafb;
+}
+
+.cv-reviewer-block > div > span {
+  color: var(--blue);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cv-reviewer-block h3 {
+  margin: 5px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.cv-reviewer-block p {
+  margin: 1px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 /* Life */
@@ -1490,11 +1567,8 @@ a.news-row:hover .news-text {
   }
 
   .fashion-note {
-    grid-template-columns: 0.38fr 1fr;
-  }
-
-  .fashion-note > a {
-    grid-column: 2;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
   }
 
   .life-hero {
@@ -1603,6 +1677,7 @@ a.news-row:hover .news-text {
 
   .profile-hero {
     gap: 28px;
+    overflow: hidden;
     padding-block: 36px 40px;
   }
 
@@ -1774,38 +1849,13 @@ a.news-row:hover .news-text {
     display: none;
   }
 
-  .news-codebar {
-    min-height: 40px;
-    padding: 8px 10px;
-  }
-
-  .news-codebar code {
-    overflow: hidden;
-    max-width: 68%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .news-codebar span {
-    font-size: 9px;
-    white-space: nowrap;
-  }
-
-  .news-scroll {
-    max-height: min(440px, 60vh);
-  }
-
   .news-row {
-    grid-template-columns: 52px 18px minmax(0, 1fr) 12px;
-    gap: 8px;
+    grid-template-columns: 68px minmax(0, 1fr) 12px;
+    gap: 10px;
     min-height: 52px;
-    padding: 11px 9px;
+    padding: 12px 0;
     font-size: 13px;
     line-height: 1.4;
-  }
-
-  .news-kind {
-    display: none;
   }
 
   .news-row time {
@@ -1813,22 +1863,16 @@ a.news-row:hover .news-text {
     line-height: 1.55;
   }
 
-  .news-emoji {
-    font-size: 12px;
-  }
-
-  .news-codefoot {
-    font-size: 9px;
-  }
-
   .paper-list li {
-    grid-template-columns: 28px minmax(0, 1fr) 20px;
+    grid-template-columns: 28px minmax(0, 1fr) 42px;
     gap: 10px;
     padding: 16px 0;
   }
 
   .paper-list time {
-    display: none;
+    display: block;
+    padding-top: 2px;
+    font-size: 9px;
   }
 
   .paper-list h3,
@@ -1850,14 +1894,6 @@ a.news-row:hover .news-text {
     line-height: 1.45;
   }
 
-  .paper-list li > a,
-  .paper-list li > span:last-child {
-    display: grid;
-    width: 20px;
-    height: 32px;
-    place-items: center;
-  }
-
   .fashion-note {
     margin-block: 4px 44px;
     padding: 22px 20px;
@@ -1874,8 +1910,7 @@ a.news-row:hover .news-text {
     line-height: 1.6;
   }
 
-  .fashion-note > a {
-    grid-column: 1;
+  .fashion-note-copy > a {
     display: flex;
     min-height: 40px;
     align-items: center;
@@ -1995,7 +2030,8 @@ a.news-row:hover .news-text {
   }
 
   .talks-section {
-    padding-top: 42px;
+    margin-top: 42px;
+    padding: 20px 16px;
   }
 
   .talks-section > header {
@@ -2008,7 +2044,7 @@ a.news-row:hover .news-text {
   }
 
   .talk-list article {
-    grid-template-columns: 28px minmax(0, 1fr);
+    grid-template-columns: 28px 72px minmax(0, 1fr);
     gap: 8px 10px;
     padding: 15px 0;
   }
@@ -2028,9 +2064,8 @@ a.news-row:hover .news-text {
   }
 
   .talk-type {
-    grid-column: 2;
     width: fit-content;
-    margin-top: -2px;
+    margin-top: 0;
   }
 
   .cv-sidebar {
@@ -2096,13 +2131,13 @@ a.news-row:hover .news-text {
   }
 
   .cv-section {
-    padding-bottom: 34px;
+    margin-bottom: 30px;
   }
 
   .cv-section > header {
     grid-template-columns: var(--cv-meta-column) minmax(0, 1fr);
     gap: var(--cv-column-gap);
-    padding-bottom: 11px;
+    padding: 11px 13px;
   }
 
   .cv-section > header h2 {
@@ -2114,7 +2149,7 @@ a.news-row:hover .news-text {
   .cv-service-list article {
     grid-template-columns: 1fr;
     gap: 7px;
-    padding: 16px 0;
+    padding: 16px 13px;
   }
 
   .cv-timeline time,
@@ -2145,7 +2180,7 @@ a.news-row:hover .news-text {
   .cv-output-list li {
     grid-template-columns: 28px minmax(0, 1fr);
     gap: 10px;
-    padding: 13px 0;
+    padding: 13px;
   }
 
   .cv-output-list p {
@@ -2154,10 +2189,20 @@ a.news-row:hover .news-text {
     line-height: 1.58;
   }
 
-  .review-list {
-    gap: 6px;
-    margin-left: 38px;
-    padding-top: 14px;
+  .cv-presentation-list > li {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+    padding: 14px 13px;
+  }
+
+  .cv-presentation-list h3 {
+    font-size: 15px;
+  }
+
+  .cv-reviewer-block {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 16px 13px;
   }
 
   .inner-page {
@@ -2317,9 +2362,9 @@ a.news-row:hover .news-text {
   }
 
   .news-row {
-    grid-template-columns: 48px 16px minmax(0, 1fr) 10px;
+    grid-template-columns: 62px minmax(0, 1fr) 10px;
     gap: 6px;
-    padding-inline: 7px;
+    padding-inline: 0;
   }
 }
 

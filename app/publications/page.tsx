@@ -38,24 +38,16 @@ export default function PublicationsPage() {
             <li id={paper.id.toLowerCase()} key={paper.id}>
               <span className="paper-id">{paper.id}</span>
               <div>
-                <h2>{paper.title}</h2>
+                <h2>
+                  <a href={paper.href} target="_blank" rel="noreferrer">
+                    {paper.title}
+                  </a>
+                </h2>
                 <p>{paper.authors}</p>
                 <em>{paper.venue}</em>
                 <span className="paper-type">{paper.type}</span>
               </div>
               <time>{paper.year}</time>
-              {paper.href ? (
-                <a
-                  href={paper.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Open ${paper.title}`}
-                >
-                  ↗
-                </a>
-              ) : (
-                <span aria-hidden="true">·</span>
-              )}
             </li>
           ))}
         </ol>
@@ -64,17 +56,24 @@ export default function PublicationsPage() {
       <section className="talks-section">
         <header>
           <span>Selected presentations</span>
-          <h2>Talks & posters</h2>
+          <div>
+            <h2>Talks & posters</h2>
+            <p>Invited and selected presentations at conferences and workshops.</p>
+          </div>
         </header>
         <div className="talk-list">
           {talks.map((talk) => (
             <article key={talk.id}>
               <span>{talk.id}</span>
+              <span
+                className={`talk-type talk-type--${talk.type.toLowerCase()}`}
+              >
+                {talk.type}
+              </span>
               <div>
                 <h3>{talk.title}</h3>
                 <p>{talk.event}</p>
               </div>
-              <span className="talk-type">{talk.type}</span>
               <time>{talk.year}</time>
             </article>
           ))}

@@ -6,110 +6,46 @@ export const links = {
     "https://scholar.google.com/citations?hl=en&user=JgnH-O8AAAAJ",
   linkedin: "https://www.linkedin.com/in/ge-lei",
   cv: `${siteBasePath}/Lei-Ge-CV.pdf`,
+  imperial: "https://www.imperial.ac.uk/",
+  polaron: "https://www.polaron.ai/",
+  donghua: "https://english.dhu.edu.cn/",
+  marangoni: "https://www.istitutomarangoni.com/en",
 };
 
 export const news = [
   {
-    date: "2026.05",
-    kind: "Paper",
-    icon: "🧠",
-    text: "Elicitation Matters: How Prompts and Query Protocols Shape LLM Surrogates under Sparse Observations.",
+    date: "May 2026",
+    text: "We released a new paper on how prompts and query protocols shape LLM surrogates when data are scarce.",
     href: "https://arxiv.org/abs/2605.04764",
   },
   {
-    date: "2026.01",
-    kind: "Paper",
-    icon: "🔋",
-    text: "From Prompt to Protocol: Fast Charging Batteries with Large Language Models.",
+    date: "2026",
+    text: "I was invited to give a keynote at AIMET in Mechelen, Belgium.",
+  },
+  {
+    date: "Jan 2026",
+    text: "We released a paper on using LLM agents to design fast-charging battery protocols.",
     href: "https://arxiv.org/abs/2601.09626",
   },
   {
-    date: "2026",
-    kind: "Keynote",
-    icon: "🖥️",
-    text: "From Trust to Action: Large Language Models for Scientific Discovery and Decision Support at AIMET.",
-  },
-  {
-    date: "2026",
-    kind: "Oral",
-    icon: "🤖",
-    text: "Presented From Prompt to Protocol: Fast Charging Batteries with Large Language Models at AI4AM in Madrid.",
-    href: "https://arxiv.org/abs/2601.09626",
-  },
-  {
-    date: "2025.12",
-    kind: "Publication",
-    icon: "🧬",
-    text: "Do Llamas Understand the Periodic Table? published in Digital Discovery.",
+    date: "Dec 2025",
+    text: "Our paper on how LLMs represent the periodic table was published in Digital Discovery.",
     href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
   },
   {
     date: "2025",
-    kind: "Community",
-    icon: "🕸️",
-    text: "Co-organized Deep Matters: Foundations, an interdisciplinary conference on foundation models for materials science.",
+    text: "I gave a spotlight presentation at the NeurIPS AI for Science Workshop in San Diego.",
+    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
+  },
+  {
+    date: "2025",
+    text: "I co-organized Deep Matters: Foundations in London, a conference on foundation models for materials science.",
     href: "https://tldr-group.github.io/deep-matters/",
   },
   {
-    date: "2025",
-    kind: "Lecture",
-    icon: "⌨️",
-    text: "Delivered “How LLMs Work? From Transformer to Reasoning” for the iCircular3 Marie Curie Doctoral Network.",
-  },
-  {
-    date: "2025",
-    kind: "Spotlight",
-    icon: "🔬",
-    text: "Do Llamas See the Periodic Table in 3D? at the NeurIPS AI for Science Workshop.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
-  },
-  {
-    date: "2025",
-    kind: "Oral",
-    icon: "🧊",
-    text: "Presented Unveiling 3D Geometries in LLMs at AI4AM in San Sebastian.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
-  },
-  {
-    date: "2025",
-    kind: "Poster",
-    icon: "🧪",
-    text: "Presented LLMs Know Chemistry at the Oxford Modelling Symposium.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
-  },
-  {
-    date: "2025",
-    kind: "Poster",
-    icon: "🧮",
-    text: "Presented Do Llamas Understand Chemistry? at the AI for Materials Summer School in Karlsruhe.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00374a",
-  },
-  {
-    date: "2025.06",
-    kind: "Appointment",
-    icon: "💻",
-    text: "Joined Polaron as a part-time LLM Machine Learning Engineer.",
-  },
-  {
-    date: "2024",
-    kind: "Publication",
-    icon: "📡",
-    text: "Materials Science in the Era of Large Language Models: A Perspective published in Digital Discovery.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00074a",
-  },
-  {
-    date: "2024",
-    kind: "Talk",
-    icon: "🧑‍💻",
-    text: "Presented Large Language Models in Materials Science at L2M3, EPFL.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00074a",
-  },
-  {
-    date: "2024",
-    kind: "Poster",
-    icon: "⚡",
-    text: "Presented Battery GPT? Materials Science in the Era of Large Language Models at the Oxford Modelling Symposium.",
-    href: "https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00074a",
+    date: "Jun 2025",
+    text: "I joined Polaron as a part-time LLM Machine Learning Engineer.",
+    href: "https://www.polaron.ai/",
   },
 ];
 
@@ -363,6 +299,7 @@ export const appointments = [
   {
     date: "Aug 2023 – Sep 2026 (expected)",
     place: "Imperial College London · London, UK",
+    href: links.imperial,
     role: "PhD Candidate in Design Engineering",
     details: [
       "Research on LLMs for materials science, interpretable AI, and agentic systems.",
@@ -372,6 +309,7 @@ export const appointments = [
   {
     date: "Jun 2025 – Present",
     place: "Polaron · London, UK",
+    href: links.polaron,
     role: "LLM Machine Learning Engineer · Part-time",
     details: [
       "Leading the development of an LLM agent platform that bridges research and real-world deployment.",
@@ -383,6 +321,7 @@ export const education = [
   {
     date: "2023 – 2026 (expected)",
     place: "Imperial College London · London, UK",
+    href: links.imperial,
     role: "PhD in Design Engineering",
     details: [
       "Research focus: LLMs for science, LLM agents, and AI interpretability.",
@@ -392,6 +331,7 @@ export const education = [
   {
     date: "2020 – 2023",
     place: "Donghua University · Shanghai, China",
+    href: links.donghua,
     role: "MSc in Fashion Design and Engineering",
     details: [
       "GPA: 91/100; thesis grade: 92.6/100.",
@@ -402,6 +342,7 @@ export const education = [
   {
     date: "2016 – 2020",
     place: "Donghua University · Shanghai, China",
+    href: links.donghua,
     role: "BEng in Fashion Design and Engineering",
     details: [
       "GPA: 90.3/100.",
@@ -410,7 +351,8 @@ export const education = [
   },
   {
     date: "2018 – 2019",
-    place: "Istituto Marangoni",
+    place: "Istituto Marangoni · Milan, Italy",
+    href: links.marangoni,
     role: "Exchange Student in Fashion Design",
     details: [
       "Developed seasonal fashion collections covering concept development, pattern-making, and garment construction.",
@@ -422,6 +364,7 @@ export const industry = [
   {
     date: "Jun 2025 – Present",
     place: "Polaron · London, UK",
+    href: links.polaron,
     role: "LLM Machine Learning Engineer · Part-time",
     details: [
       "Built a production-oriented LLM orchestration service with FastAPI, LangGraph, and AWS Bedrock for natural-language control of internal workflows.",
